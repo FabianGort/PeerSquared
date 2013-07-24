@@ -2,7 +2,7 @@
 [PeerSquared](http://www.peersquared.info) is a free and easy to use tool for one-on-one online teaching. The teacher has a whiteboard to draw, write text, and put pictures on to explain a subject to a student. It also includes both video and text chat, as well as an option for direct file exchange. 
 
 ## HTML5 & PeerConnection
-PeerSquared makes use of the fresh and still experimental PeerConnection technology, which is part of the HTML5 spec. It requires so-called reliable datachannels, which are currently only built into Firefox 22 and higher. Chrome does does support PeerConnections, but currently no datachannels.
+PeerSquared makes use of the fresh and still experimental PeerConnection technology, which is part of the HTML5 spec. It requires so-called reliable datachannels, which are currently only built into Firefox 22 and higher. Chrome does support PeerConnections, but currently no datachannels.
 
 ## Demonstration
 For a demonstration see [here](http://www.peersquared.info/index.php)
