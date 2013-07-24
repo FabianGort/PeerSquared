@@ -1,5 +1,8 @@
 <?php 
 require('../Pusher.php');
+
+// $key, $secret and $app_ic are provided at Pusher.com, also see http://pusher.com/docs/client_api_guide
+
 $pusher = new Pusher($key, $secret, $app_id);
 
 $user_id = rand(1,4000);
