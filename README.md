@@ -11,7 +11,7 @@ For a demonstration see [here](http://www.peersquared.info/index.php)
 PeerSquared currently uses a MIT license, so you are free to copy, use and modify it. 
 
 ## Installing it
-You will need a websocket server to be to use PeerSquared, since the PeerConnection needs to exchange some information through a server. See the [script/Pusher_Socket.js](https://github.com/FabianGort/PeerSquared/blob/master/script/Pusher_Socket.js) for a demo version of how to connect to a websocket server. 
+You will need a websocket server to use PeerSquared, since the PeerConnection needs to exchange some information through a server. See the [script/Pusher_Socket.js](https://github.com/FabianGort/PeerSquared/blob/master/script/Pusher_Socket.js) for a demo version of how to connect to a websocket server. 
 
 As you can see in the index.html file you will need to initialize the program by calling 'PR2.init()' which takes an object as argument. This object contains a "credentials" object , and optionally a "config" object that overwrites the initial configuration. The credentials must contain a user name, a room name, and a level (either student or teacher), so like this:
 
