@@ -4,7 +4,7 @@
 The updated version is modular: it is split into independent objects which are tied together by event handlers. See the [API documentation](http://www.peersquared.info/whiteboard/apidocs/).
 
 New in this version are also:
-- ability to redo actions
+- redo actions
 - paste screenshots onto the whiteboard
 - synchronize the whiteboard
 
