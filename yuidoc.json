@@ -1,0 +1,12 @@
+{
+    "name": "PeerSquared API",
+    "description": "API for building with PeerSquared",
+    "version": "PeerSquared 1.1",
+    "url": "http://www.peersquared.info/",
+    "logo" : "http://peersquared.info/images/small-logo.png", 
+    "options" : {
+	"paths": "../script",
+	"linkNatives" : "true",
+        "outdir": "localhost/"
+    }
+}

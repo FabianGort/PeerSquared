@@ -1,3 +1,4 @@
+/* Elements */
 body {
 	font-family: Calibri, Arial;
 	font-size: 13px;
@@ -5,12 +6,12 @@ body {
 	padding: 0;
 	background-color: #eaffea;
 	overflow: hidden;
-	-moz-user-select: none;	
-	user-select: none;
-	-webkit-user-select: none;	
 }
 
-progress { width: 100px; height: 5px; } 
+progress {
+	width: 100px;
+	height: 5px;
+} 
  
  button {
 	background: linear-gradient(to bottom, #cdeb8e 0%, #a5c956 100%);
@@ -18,8 +19,36 @@ progress { width: 100px; height: 5px; }
 	border-radius: 3px;
 	cursor: pointer;
  }  
- 
-#pr2_splash {
+
+textarea {
+	outline: 0;
+}
+
+select {
+	background : transparent;
+	margin: 4px;
+	vertical-align: 10px;
+	width: calc(100% + 17px);
+	border-width: 0; 
+	color: #375B28;
+	cursor: pointer;
+	text-shadow:1px 1px #fff;
+	line-height: 20px;
+}
+
+select:focus {
+	outline: 0;
+}
+
+option {
+	background-color: #C2E37C;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+/* MODALS */
+
+#pr2_modal_background {
 	position: absolute;
 	left: 0px; 
 	top:0px; 	
@@ -30,16 +59,117 @@ progress { width: 100px; height: 5px; }
 	color: white;
 	font-size: 20px;
 	text-align: center;
-	padding-top: 300px;
 	user-select: none;
 	-webkit-user-select: none;
 	display: none;
 	z-index: 3000;
+} 
+
+#pr2_help_modal_close {
+	position: absolute;
+	z-index: 3002;
+	background-position: -532px 0;
+	width: 28px;
+	cursor: pointer;
+	height: 28px;
+	top: 28px;
+	background-image: url('../icons/pr2_sprite.png');
+	left: 50%;
+	display: none;
+	margin-left: 300px;
 }
 
+#pr2_help_modal_close:hover {
+	opacity: 0.7;
+}
 
+#pr2_help_modal {
+	position: absolute;
+	background: linear-gradient(to bottom, #cdeb8e 0%, #a5c956 100%);
+	border: solid #cdeb8e 1px;
+	border-radius: 5px;
+	padding: 10px 20px 10px 20px;
+	width: 600px;
+	left: 50%;
+	margin-left: -300px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	text-align: left;
+	color: #29441e;
+	overflow-y: auto;
+	height: calc(100% - 60px);
+	display: none;
+	z-index: 3001;
+}
 
-#pr2_confirm_dialog {
+#pr2_help_modal p {
+	margin: 0 0 10px 0;
+}
+
+#pr2_help_modal h1 {
+	font-size: 18px;
+	margin: 15px 0 0 0;
+}
+
+#pr2_help_modal h2 {
+	font-size: 16px;
+	margin: 15px 0 0 0;
+}
+
+#pr2_help_modal h3 {
+	font-size: 14px;
+	margin: 15px 0 0 0;
+}
+
+#pr2_help_modal .contents a {
+	color: black;
+}
+
+#pr2_help_modal .up {
+	color: black;
+	display: block;
+	text-align: right;
+}
+
+#pr2_help_modal img {
+	float: left;
+	vertical-align: text-top;
+	margin: 5px 5px 5px 0;
+}
+
+#pr2_help_modal notice {
+	background-color: white;
+	display: block;
+	padding: 5px; 
+	margin: 15px 0 15px 0;
+	border-radius: 5px;
+	border: solid #29441E 1px;
+}
+
+#pr2_help_modal notice:before	{
+	content:"Important: ";
+	font-weight: bold;
+} 
+
+#pr2_help_modal tip {
+	background-color: #ffff99;
+	display: block;
+	padding: 5px; 
+	margin: 15px 0 15px 0;
+	border-radius: 5px;
+	border: solid #ffcc00 1px;
+}
+
+#pr2_help_modal tip:before	{
+	content:"Tip: ";
+	font-weight: bold;
+} 
+
+#pr2_info_message {
+	font-size: 16px;	
+}
+
+#pr2_confirm_modal, #pr2_info_modal {
 	position: absolute;
 	z-index: 3001;
 	background: linear-gradient(to bottom, #cdeb8e 0%, #a5c956 100%);
@@ -49,12 +179,19 @@ progress { width: 100px; height: 5px; }
 	min-height: 90px;
     margin-left:-200px;
     left:50%;
-	margin-top: 300px;
+	margin-top: 150px;
 	display: none;
-	color: #375B28;
+	color: #29441e;
 	padding: 20px;
 	text-align: center;
 	text-shadow: 1px 1px #FFFFFF;	
+}
+
+
+#pr2_confirm_modal > button {
+	margin: 5px;
+	font-size: 14px;	
+	text-shadow: 1px 1px #FFFFFF;		
 }
 
 #pr2_confirm_question {
@@ -63,20 +200,13 @@ progress { width: 100px; height: 5px; }
 	text-align: left;
 }
 
-#pr2_confirm_dialog > button {
-	margin: 5px;
-	font-size: 14px;	
-	text-shadow: 1px 1px #FFFFFF;		
-}
 
 .pr2_canvas {
 	position: absolute;
 	left: 1px; 
-	top:34px; 	
+	top:40px; 	
 	border: solid #93BC3D 1px;
-	-moz-user-select: none;	
-	user-select: none;
-	-webkit-user-select: none;	
+ 
 }
  
  
@@ -86,7 +216,7 @@ progress { width: 100px; height: 5px; }
 }
 
 #pr2_temp_canvas { 
-	z-index: 2; 
+	z-index: 2;
 }
 
 #pr2_remote_pointer {
@@ -103,35 +233,30 @@ progress { width: 100px; height: 5px; }
 #pr2_toolbar {
 	background: linear-gradient(to bottom, #cdeb8e 0%, #a5c956 100%);
 	position: absolute;
-	padding: 5px 6px 2px 5px;
+	margin-top: -6px;
 	z-index: 30; 
-	display: block; 	
 	user-select: none;
 	left: 0;
 	right: 0;
-	min-width: 1024px;
-	height: 34px;
-	border-bottom: solid #93BC3D 1px;
+	height: 44px;
+	min-width: 800px;
 	box-shadow: 1px 1px 5px #000;
 	user-select: none;user-select: none;
 	-webkit-user-select: none;
 }
 
-#pr2_cam_toolbar {
-	position: absolute;
- 
-}
  
 #pr2_start_button {
 	background-image: url('../icons/pr2-home-button.png');
 	width: 39px;
 	height: 39px;
-	position: absolute;
-	top: 2px;
-	left: 8px;
+	display: inline-block;
+	margin: 7px 1px -7px ;
 	cursor: pointer;
 	z-index: 100;	
 }
+
+ 
 
 #pr2_start_button:hover {
 	box-shadow: 3px -2px 3px #fff;
@@ -140,12 +265,10 @@ progress { width: 100px; height: 5px; }
 #pr2_start_menu {
 	position: absolute;
 	z-index: 40;
-	top: 36px;
 	left: 10px;
 	list-style: none;
 	border: solid #93BC3D 1px;
-	border-radius: 3px;
-	margin-left:0;
+	margin: 0;
 	padding-left:0;
 	font-size: 14px;	
 	text-shadow: 1px 1px 2px #EEEEEE;	
@@ -169,25 +292,39 @@ progress { width: 100px; height: 5px; }
 #pr2_start_menu li:hover {
 	background-color:#B6D76E;
 }
-
-#pr2_start_menu li:first-child {
-	border-top-left-radius: 3px;
-	border-top-right-radius: 3px;
+ 
+ 
+#pr2_start_menu ul {
+	list-style: none;
+	background-color: #A5C956;
+	text-shadow: 1px 1px 2px #EEEEEE;	
+	color: #375B28;	
+	box-shadow: 1px 1px 2px #000;
+	position: absolute;
+	left: 160px;
+	margin-left:0;
+	margin-top: -25px;
+	padding-left:0;
+}
+#pr2_start_menu >li > ul {
+	transition-property: visibility;
+	transition-delay: 250ms;
+	visibility: hidden;
 }
 
-#pr2_start_menu li:last-child {
-	border-bottom-left-radius: 3px;
-	border-bottom-right-radius: 3px;
+#pr2_start_menu >li:hover > ul { 
+    visibility: visible; 
 }
 
-
-
-#pr2_actiongroup {
-	display: inline-block;
-	margin-left: 45px;
+.pr2_startmenu_menu {
+	background-image: url('../icons/menu-arrow.png');
+	background-repeat: no-repeat;
+	background-position: right 4px;
+	
 }
+ 
 
-.pr2_toolbutton {
+.pr2_tool_button {
 	display: inline-block;
 	background-image: url('../icons/pr2_sprite.png');
 	background-repeat: no-repeat;
@@ -203,30 +340,29 @@ progress { width: 100px; height: 5px; }
 	user-select: none;
 }
 
-.pr2_toolbutton:hover{
+.pr2_tool_button:hover, .pr2_toolbar_picker_button:hover{
 	border: solid #93BC3D 1px;
 }
 
-.pr2_toolbutton:active {
+.pr2_tool_button:active, .pr2_toolbar_picker_button:active {
 	border: solid #4F8239 1px; 
 }
 
-.pr2_toolbutton_disabled {
+.pr2_tool_button_disabled {
 	opacity: 0.5;
 	border: solid transparent 1px;
 	cursor: default;
 }
-.pr2_toolbutton_disabled:hover {
+.pr2_tool_button_disabled:hover {
 	opacity: 0.5;
 	border: solid transparent 1px;
 }
-.pr2_toolbutton_disabled:active {
+.pr2_tool_button_disabled:active {
 	opacity: 0.5;
 	border: solid transparent 1px;
 }
 
-
-.pr2_toolbutton_selected { 
+.pr2_tool_button_selected { 
  	background-color: #cdeb8e;
 	border-color: #80A435;
 }
@@ -240,7 +376,7 @@ progress { width: 100px; height: 5px; }
 	display: inline-block;
 }
 
-.pr2_picker {
+.pr2_toolbar_picker {
 	box-shadow: 1px 1px 5px #000;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
@@ -251,20 +387,39 @@ progress { width: 100px; height: 5px; }
 	z-index: 4;	
 }
 
+.pr2_picker_button, .pr2_toolbar_picker_button  {
+	display: inline-block;
+	height: 28px;
+	width: 28px;
+	margin: 0 0 0 10px;
+	border: solid transparent 1px; 
+	background-repeat: no-repeat;
+	border-radius: 4px;
+	cursor: pointer;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+.pr2_picker_button:hover{
+	border: solid #93BC3D 1px;
+}
+
+.pr2_picker_button:active {
+	border: solid #4F8239 1px; 
+}
+
 #pr2_undo_button {
 	background-position: -168px 0;
 }
 
-
-#pr2_toolbar input {
-	background-color: #cdeb8e;
-	border: solid #93BC3D 1px;
+#pr2_redo_button {
+	background-position: -168px -28px;
 }
 
 #pr2_paint_button {
 	background-position: -112px 0;	
 }
-
 
 #pr2_write_button {
 	background-position: -280px 0;	
@@ -278,186 +433,139 @@ progress { width: 100px; height: 5px; }
 	background-position: -224px 0;	
 }
 
-#pr2_cam_button {
+#pr2_player_button {
 	background-position: -420px 0;	
+	margin-left: 180px;
 }
 
-.pr2_active_cam_button {
-	background-position: -448px 0 !important;	
-}
-
-
-
-#pr2_fullscreen_button {
-	background-position: -392px 0;	
-}
-
-#pr2_sendchat_button {
-	background-position: -476px 0;
-	vertical-align: 5px;
-	border: solid #93BC3D 1px;
-	border-radius: 3px;
-	cursor: pointer;
- 	background-image: url('../icons/pr2_sprite.png'), linear-gradient(to bottom, #cdeb8e 0%, #a5c956 100%) !important;	
- 
-}
-
-#pr2_select_color_button {
-	background-image: none !important;
-	padding: 4px;
-	border: solid #80A435 1px;
-	height: 16px !important;
-	width: 16px !important;
-}
-
-#pr2_color_picker { 
-	width: 123px;
-	min-height: 40px; 	
-}
- 
-#pr2_color_picker span {	
-	display: inline-block;
-	height: 20px;
-	width: 20px;
-	margin-top: 2px;
-	margin-left: 2px;
-	border: solid #93BC3D 1px;
-	cursor: pointer;
-}
-
-#pr2_color_picker span:hover {	
-	opacity: 0.6;
-}
-
-#pr2_select_width_button {
+#pr2_select_linewidth_button {
 	background-image: url('../icons/black_line.png')  !important;
 	background-size: 20px 2px !important;
 	background-position: 4px 8px;
 }
 
-#pr2_width_picker { 
-	width: 30px;
-	min-height: 40px; 
-}
 
-#pr2_width_picker span {	
-	display: inline-block;
-	background: url('../icons/black_line.png') 2px 4px no-repeat; 	
-	height: 16px;
-	padding: 1px;
-	width: 22px;
-	margin-left: 2px;
-	border: solid transparent 1px;
-	cursor: pointer;
-	border-radius: 2px;
+#pr2_select_linewidth_button + .pr2_toolbar_picker > span:hover{ 
+	border: solid #cdeb8e 1px;
 }
-
-#pr2_width_picker span:hover {	 
-	border: solid #93BC3D 1px;
-	padding: 1px;
-}
-
 
 #pr2_select_bg_button {
 	background-position: -196px 0;
 }
 
-#pr2_bg_picker {
-	padding: 10px;
-	width: 490px;
-	min-height: 100px;
-	text-shadow: 1px 1px 2px #EEEEEE;	
-	color: #375B28;		
+#pr2_question_button {
+	background-position: -504px 0;
 }
 
-#pr2_bg_picker > div {
+
+.pr2_active_player_button {
+	background-position: -448px 0 !important;	
+}
+
+#pr2_fullscreen_button {
+	background-position: -392px 0;	
+}
+
+#pr2_chat_container  > span {
 	display: inline-block;
-	padding: 4px;
+	width: 20px;
+}
+
+#pr2_chat_container button{
+	vertical-align: 7px;
+	margin-left: 1px;
+	border: solid #93BC3D 1px;
+	display: inline-block;
+	height: 18px;
+	width: 18px;
+	border-radius: 3px;
+	cursor: pointer;
+ 	background-image: url('../icons/pr2_sprite.png'), linear-gradient(to bottom, #cdeb8e 0%, #a5c956 100%) !important;	
+}
+#pr2_chat_send_button{
+	background-position: -478px -1px;
+}
+
+#pr2_file_send_button {
+	background-position:-90px -30px, 0 0 ;
+	margin-top: -20px;	
+}
+
+#pr2_select_color_button + .pr2_toolbar_picker { 
+	width: 123px;
+	min-height: 40px;
+	padding-top : 2px;
+}
+ 
+#pr2_select_color_button + .pr2_toolbar_picker > span {	
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	margin-top: 2px;
+	margin-left: 2px;
+	border: solid #cdeb8e 1px;
+}
+
+#pr2_select_color_button + .pr2_toolbar_picker > span:hover  {	
+	border: solid #93BC3D 1px;
+}
+ 
+#pr2_select_color_button + .pr2_toolbar_picker > span:active  {	
+	border: solid #4F8239 1px; 
+}
+
+#pr2_select_linewidth_picker { 
+	width: 30px;
+	min-height: 40px; 
+}
+
+#pr2_select_linewidth_button + .pr2_toolbar_picker > span {	
+	display: inline-block;
+	background: url('../icons/black_line.png') 2px 4px no-repeat; 	
+	height: 22px;
+	padding: 1px;
+	width: 22px;
+	margin-left: 2px;
+	border-radius: 2px;
+}
+
+#pr2_select_bg_button {
+	background-repeat: repeat;
+	background-position: 0, -4px;
+}
+
+#pr2_select_bg_button + .pr2_toolbar_picker {
+	padding: 10px;
+	width: 430px;
+	min-height: 100px;
+}
+
+#pr2_select_bg_button + .pr2_toolbar_picker > span {
+	display: inline-block;
+	background-repeat: repeat;
 	margin-right: 10px;
 	margin-top: 5px;
-	border: solid transparent 1px;
 	height: 64px;
-	border-radius: 5px;
-	cursor: pointer;
-}
-#pr2_bg_picker > p {
-	cursor: pointer;
+	width: 64px;
 }
 
-#pr2_bg_picker > div:hover {
-	border: solid #93BC3D 1px;
-}
-
-#pr2_bg_picker > div:active {
-	border: solid white 1px;
+#pr2_select_shape_button {
+	background-image: url('../icons/pr2_sprite.png');
 }
   
-#pr2_bg_picker > div > span:first-child {	
-	display: inline-block;
-	height: 60px;
-	width: 90px;
-	margin-top: 2px;
-	margin-left: 4px;
-	border: solid #93BC3D 1px;
-	cursor: pointer;
-}
 
-#pr2_bg_picker > div > span:last-child {	
-	display: inline-block;
-	width: 120px;
-	margin-left: 6px;	
-}
-
-#pr2_shape_picker {
+#pr2_select_shape_button + .pr2_toolbar_picker {
 	width: 212px;
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
 
-#pr2_shape_picker span {
+#pr2_select_shape_button + .pr2_toolbar_picker > span {
 	background-image: url('../icons/pr2_sprite.png');
 	background-repeat: no-repeat;	
 }
 
-.pr2_select_shape_button {
-	background-image: url('../icons/pr2_sprite.png');
-	background-repeat: no-repeat;	
-}
-
-#pr2_select_line_button {
-	background-position: -84px 0;
-}
-
-#pr2_select_arrow_button {
-	background-position: -308px 0;
-}
-
-#pr2_select_axis_button {
-	background-position: -364px 0;
-}
-
-#pr2_select_triangle_button {
-	background-position: -56px 0;
-}
-
-#pr2_select_triangle2_button {
-	background-position: -336px 0;
-}
-
-#pr2_select_rectangle_button {
-	background-position: 0 0;
-}
-
-#pr2_select_circle_button {
-	background-position: -28px 0;
-}
-
-#pr2_select_star_button {
-	background-position: -252px 0;
-}
-
-
-#pr2_textwidth_span {
+#pr2_textheight_calculator {
 	font-size : 11px;
 	font-family: Verdana;
 	font-weight: normal;
@@ -547,33 +655,101 @@ progress { width: 100px; height: 5px; }
 	bottom: 0;
 }
 
-
-.pr2_video_container { 
-	background-color: black; 
-	display: block; 
-	margin: 3px;
-	border: solid #93BC3D 1px;	
-}
-
-#pr2_chat_container { 
+#pr2_player_container { 
 	position:absolute;   
-	padding: 5px 0 0 2px;
-	top: 40px;
-	right: 0;
-	z-index: 26;
+	padding: 0;
+	top: 100px;
+	height: 400px;
+	right: 2px;
+	left: 800px;
+	z-index: 27;
 	background-color: #eaffea;
 }
- 
 
+.pr2_player {
+	position: absolute;
+	background-color: black; 
+	border: solid #93BC3D 1px;
+}
+
+#pr2_remote_player {
+	z-index: 1;
+	right: 0;
+	width: calc(100% - 4px);
+	height: 300px;
+}
+
+#pr2_local_player {
+	z-index: 2;
+	right: 0;
+	height: 90px;
+	width: 120px;
+	margin: 4px;
+}
+
+.pr2_remote_player_fullscreen {
+	height: 100% !important;
+	width: 100% !important;
+	margin: 0 !important;
+}
  
-.pr2_mycam_fullscreen {
+.pr2_local_player_fullscreen {
 	position: absolute;
 	z-index: 400;
 	border: solid #93BC3D 1px;
 	margin: 10px;
 }
 
-.pr2_othercam_fullscreen {
+#pr2_cam_button {
+	background-image: url('../icons/pr2_sprite.png');
+	background-position: -420px 0;
+	height:28px;
+	width: 28px;
+	display: inline-block; margin: 0;
+	cursor : pointer;
+	border: solid transparent 1px;
+	margin:2px;
+	border-radius: 4px;
+}
+
+#pr2_cam_button:hover, #pr2_fullscreen_button:hover {
+	border: solid black 1px;
+}
+
+.pr2_active_cam_button {
+	background-position: -448px 0 !important;	
+}
+
+#pr2_fullscreen_button {
+	background-image: url('../icons/pr2_sprite.png');
+	background-position: -392px 0;
+	height:28px;
+	width: 28px;
+	display: inline-block;
+	cursor : pointer;
+	border: solid transparent 1px;
+	margin: 2px;
+	border-radius: 4px;
+}
+
+#pr2_cam_controls {
+	background-color: white;
+	opacity: 0.1;
+	display: block;
+	z-index: 300;
+	width:34px;
+	color: black;
+	position: relative;
+	margin: 10px;
+	border-radius: 5px;
+	text-align: center;	
+}
+
+#pr2_cam_controls:hover {
+	opacity: 0.3;	
+}
+
+.pr2_remote_player_fullscreen {
 	height: 100%;
     left: 0px;
     position: absolute;
@@ -582,24 +758,31 @@ progress { width: 100px; height: 5px; }
     width: 100%;
 }
  
+#pr2_chat_container { 
+	position:absolute;   
+	padding: 0;
+	top: 40px;
+	right: 2px;
+	z-index: 26;
+	background-color: #eaffea;
+}
 
 #pr2_chat_conversation { 
 	border: solid #93BC3D 1px; 
-	width:294px; 
-	height:172px;  
+	width: calc(100% - 12px); 
+	height:200px;  
 	background-color: white; 
 	overflow-y: auto;
 	padding: 3px;
 	margin-left: 3px;
-	margin-top: 5px;
-	font-size: 12px;	
+	font-size: 14px;
+	line-height: 20px;
 }
 
 #pr2_chat_conversation>div>span:last-child {
 	display: inline-block; 
-	width: 222px;
-	padding-left: 4px;
-
+	width: calc(100% - 58px);
+	padding-left: 2px;
 }
 
 #pr2_chat_conversation>div>span:first-child { 
@@ -611,19 +794,32 @@ progress { width: 100px; height: 5px; }
 
 #pr2_chat_input { 
 	border: solid #93BC3D 1px; 
-	margin: 5px 3px 3px 3px; 
-	font-size: 12px;
+	margin: 4px 3px 3px 3px;
+	padding: 2px;
+	font-size: 14px;
 	resize: none;
-	width: 276px;
-	height: 48px;
+	width: calc(100%  - 33px);
+	height: 80px;
 	font-family: Calibri,Arial;
+}
+
+#pr2_chat_conversation a {
+	color: #375B28;
+}
+
+#pr2_chat_conversation a:hover {
+	font-style: italic;
+}
+
+#pr2_chat_input:disabled {
+	background-color: white;
 }
 
 .pr2_chat_other { 
 	color: green 
 }
 
-.pr2-select-wrapper {
+.pr2_select_wrapper {
 	background-color: #CDEB8E;
     background-image: url("../icons/select-arrow.png");
     background-position: right center;
@@ -638,35 +834,35 @@ progress { width: 100px; height: 5px; }
 
 }
 
-.pr2-select-wrapper:hover {
+.pr2_select_wrapper:hover {
 	border: solid #93BC3D 1px;
 }
 
-select {
-	background : transparent;
-	margin: 4px;
-	vertical-align: 10px;
-	width: calc(100% + 17px);
-	border-width: 0; 
-	color: #375B28;
-	cursor: pointer;
-	text-shadow:1px 1px #fff;
-	line-height: 20px;
+
+/* EMOTICONS */
+
+.pr2_emo {
+	background-image: url('../icons/pr2_emoticon_sprite.png');
+	background-repeat: no-repeat;
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	vertical-align: top;
 	
 }
 
-select:focus {
-	outline: 0;
+.pr2_emo_nerd {
+	background-position: 0px 0px;
 }
 
-option {
-	background-color: #C2E37C;
-	cursor: pointer;
-	overflow: hidden;
+.pr2_emo_smile {
+	background-position: -20px 0px;	
 }
- 
- 
 
-#pr2_bg_picker > div, #pr2_bg_picker>div>span:last-child {
-	background-size: 0 0;
+.pr2_emo_wink {
+	background-position: -160px -20px;	
+}
+
+.pr2_emo_think {
+	background-position: -100px 0px;	
 }

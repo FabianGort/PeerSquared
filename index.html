@@ -6,35 +6,20 @@
  <link rel="stylesheet" href="css/canvas.css" />
 </head>
 <body>
-<script src="script/Pusher_Socket.js"></script> 
-<script src="http://js.pusher.com/2.0/pusher.min.js" type="text/javascript"></script>
-<script src="script/config.js"></script>
-<script src="script/PR2.js"></script>
 <script>
-// Debug mode will log some information in the console
-// Offline mode will allow to test many things without an internet connection
-var debug = true, offline = true;
-	
+var user = location.hash.slice(1).split('_');
+var credentials = {level : user[0], name : user[0], channel :user[1]};
 
-// Initialize the PR2 singleton object
-window.onload = function() {
-	var user = location.hash.slice(1).split('_');
-	PR2.init({
-		"credentials" : { // Credentials are mandatory,
-			"name" : user[0], // name of the particpant
-			"level" : user[1], // level must either be teacher or student
-			"room" : user[2] // the name of the 'room' the particpants are in (both participants use the same room name)
-		},
-		"config" : config // configuration is optional (see also config.js) 
-	});
-}
-
-// Try to close the Peer Connection when the browser unloads, so the other client is notified that the Peer Connection is gone
 window.onbeforeunload = function() {
-	PR2.peer.close();
+	if(PR2.peer.isConnected()) {
+	  PR2.peer.sendData(JSON.stringify({type : 'close-connection'}));
+	}
 }
-  
- 
+
 </script>
+<script src="http://js.pusher.com/2.0/pusher.min.js" type="text/javascript"></script>
+<script src="script/Pusher_Socket.js"></script> 
+<script src="script/peersquared.min.js"></script>
+
 </body>
 </html>

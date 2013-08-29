@@ -1,0 +1,89 @@
+Name=aMSN
+Description=Ubitux Smiley set v1.1 (default aMSN smiley set)
+Icon=Messenger.png
+Author=Boesch Clément aka ubitux(smiley theme), ersi (tarball)
+
+[MSN]
+Happy_smiley.png              :)      :-)
+Very_happy_smiley.png         :D      :d    :-D    :-d
+Winking_smiley.png            ;)      ;-)
+Oh_my_God_smiley.png          :-O     :-o    :O    :o
+Tonque_out_smiley.png         :P      :p    :-P    :-p
+Hot_smiley.png                (H)     (h)
+Angry_smiley.png              :@      :-@
+Ashamed_smiley.png            :$      :-$
+Confused_smiley.png           :S      :s    :-S    :-s
+Sad_smiley.png                :(      :-(
+Crying_smiley.png             :'(
+Shocked_smiley.png            :|      :-|
+Devil.png                     (6)
+Angel_smiley.png              (A)     (a)
+Heart.png                     (L)     (l)
+Broken_heart.png              (U)     (u)
+Messenger.png                 (M)     (m)
+Cat.png                       (@)
+Dog.png                       (&)
+Moon.png                      (S)
+Star.png                      (*)
+Filmstrip.png                 (~)
+Note.png                      (8)
+Email.png                     (E)     (e)
+Rose.png                      (F)     (f)
+Wilted_rose.png               (W)     (w)
+Clock.png                     (O)     (o)
+Kiss.png                      (K)     (k)
+Gift.png                      (G)     (g)
+Birthday_cake.png             (^)
+Camera.png                    (P)     (p)
+Light.png                     (I)     (i)
+Coffee_cup.png                (C)     (c)
+Telephone_receiver.png        (T)     (t)
+Left_hug.png                  ({)
+Right_hug.png                 (})
+Beer.png                      (B)     (b)
+Dry_martini.png               (D)     (d)
+Boy.png                       (Z)     (z)
+Girl.png                      (X)     (x)
+Thumbs_up.png                 (Y)     (y)
+Thumbs_down.png               (N)     (n)
+Bat.png                       :[      :-[
+Goat.png                      (nah)
+Sun.png                       (#)
+Rainbow.png                   (R)     (r)
+Dont_tell_anyone_smiley.png   :-#
+Baring_teeth_smiley.png       8o|
+Nerd_smiley.png               8-|
+Sarcastic_smiley.png          ^o)
+Secret_telling_smiley.png     :-*
+Sick_smiley.png               +o(
+Snail.png                     (sn)
+Turtle.png                    (tu)
+Plate.png                     (pl)
+Bowl.png                      (||)
+Pizza.png                     (pi)
+Soccer_ball.png               (so)
+Auto.png                      (au)
+Airplane.png                  (ap)
+Umbrella.png                  (um)
+Island.png                    (ip)
+Computer.png                  (co)
+Mobile_phono.png              (mp)
+Be_Right_Back_smiley.png      (brb)
+Rain.png                      (st)
+Clapping_hands.png            (h5)
+Money.png                     (mo)
+Sheep.png                     (bah)
+Dont_know_smiley.png          :^)
+Thinking_smiley.png           *-)
+Storm.png                     (li)
+Party_smiley.png              <:o)
+Eye_rolling_smiley.png        8-)
+Sleepy_smiley.png             |-) 
+#! skywalker.png     C:-)    c:-)    C:)     c:)
+#! monkey.png        :-(|)  :(|)  
+                               
+# Hidden MSN emotes
+Cigarette.png      	      (ci)    (CI)
+Handcuffs.png                 (%)
+Xbox.png		      (xx)    (XX)
+Fingerscrossed.png            (yn)    (YN)
