@@ -1,6 +1,13 @@
 # PeerSquared
 [PeerSquared](http://www.peersquared.info) is a free and easy to use tool for one-on-one online teaching. The teacher has a whiteboard to draw, write text, and put pictures on to explain a subject to a student. It also includes both video and text chat, as well as an option for direct file exchange. 
 
+The updated version is modular: it is split into independent objects which are tied together by event handlers. See the [API documentation](http://www.peersquared.info/whiteboard/apidocs/).
+
+New in this version are also:
+- ability to redo actions
+- paste screenshots onto the whiteboard
+- synchronize the whiteboard
+
 ## HTML5 & PeerConnection (webRTC)
 PeerSquared makes use of the fresh and still experimental PeerConnection technology, which is part of the HTML5 spec. It requires so-called reliable datachannels, which are currently only built into Firefox 22 and higher. Chrome does support the PeerConnection, but currently no reliable datachannels. For more info see the [webRTC website](http://www.webrtc.org/)
 
