@@ -1,6 +1,7 @@
 <?php 
 require('Pusher.php');
-$pusher = new Pusher('ce5e15ae4b2ea6d71902', '24e3586ec6834d116000', '42177');
+// you get your own app key, secret and id, by creating an account at pusher.com
+$pusher = new Pusher(APP_KEY, APP_SECRET, APP_ID);
 
 $user_id = rand(1,4000);
 $user_info = array('name' => $_GET["your_name"]);
