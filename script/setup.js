@@ -557,12 +557,17 @@
 			chat_container = $.get('pr2_chat_container'),
 			player_container = $.get('pr2_player_container'),
 			canvas_right = canvas.offsetLeft + canvas.offsetWidth,
-			player_container_top = chat_container.offsetTop + chat_container.offsetHeight;
+			player_container_top = chat_container.offsetTop + chat_container.offsetHeight,
+			max_width = 1500;
 	  
 	  chat_container.style.left = canvas_right + 'px';
 	  player_container.style.left = canvas_right + 'px';
 	  player_container.style.top = player_container_top + 'px';
-	 
+	// resize chat and cam fields on their right to a maximum of 'max_width'
+	 if (window.screen.availWidth > max_width) {
+		
+		chat_container.style.right = player_container.style.right = (window.screen.availWidth - max_width) + 'px'; 
+	 }
 	})();
 
 	// Set waiting splash screen
