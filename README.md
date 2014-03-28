@@ -17,7 +17,9 @@ PeerSquared makes use of the fresh and still experimental PeerConnection technol
 
 ## Demonstration
 For a demonstration see:
+
 [Teacher](http://www.peersquared.info/v1/#teacher_test)
+
 [Student](http://www.peersquared.info/v1/#student_test)
 
 ## License
