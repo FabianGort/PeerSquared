@@ -1,5 +1,15 @@
 # PeerSquared
 
+1)  npm install socket.io
+
+2) npm install fs 
+
+node server
+
+
+
+
+
 **Note: this is an older version, I'm not providing support for this currently**
 
 [PeerSquared](http://www.peersquared.info) is a free and easy to use tool for one-on-one online teaching. The teacher has a whiteboard to draw, write text, and put pictures on to explain a subject to a student. It also includes both video and text chat, as well as an option for direct file exchange. 
