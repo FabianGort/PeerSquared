@@ -1,10 +1,9 @@
-var http = require('http'),
-     socket_io = require('socket.io'),
-     fs = require('fs');
-    
-    //var options = {};
-var express = require('express');
-var app = express();
+
+
+var app = require('express')();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+
 var bodyParser = require('body-parser')
 var path = require('path');
 
@@ -13,33 +12,16 @@ var path = require('path');
 // parse application/json
 app.use(bodyParser.json());
 
-//app.use(express.static(path.join(__dirname, 'public')));
 
-
-var app = http.createServer(handler);
-var io = socket_io.listen(app);
-
-
-app.listen(3000);
-
-/*
-io.configure(function () {
-io.set("origins","fabfactory.cloud.tilaa.com:*|localhost:*|developer.cdn.mozilla.net:*|www.fabfactory.eu:*|fabfactory.eu:*|developer.mozilla.org:*|www.peersquared.info:*|peersquared.info:*|localhost:*");
+app.get('/', function(req, res){
+  res.sendFile(__dirname + '/index.html');
 });
 
-*/
-function handler (req, res) {
-     fs.readFile(__dirname + '/index.html',
-         function (err, data) {
 
-             if (err) {
-                 res.writeHead(500);
-                 return res.end('Error loading index.html');
-             }
-             res.writeHead(200);
-             res.end(data);
-         });
-}
+http.listen(3000, function(){
+  console.log('listening on *:3000');
+});
+
 
 io.sockets.on('connection', function (socket) {
     socket.on('join room', function(data){
