@@ -7,6 +7,27 @@ var io = require('socket.io')(http);
 var bodyParser = require('body-parser')
 var path = require('path');
 
+var PR2    = require('./public/script/PR2.js').PR2;
+var Pusher = require('./public/script/Pusher_Socket.js').Pusher;
+
+var setup  = require('./public/script/setup.js').setup;
+var config = require('./public/script/config').config;
+
+var camplayer  = require('./public/script/PR2_modules/camplayer.js').camplayer;
+var utils      = require('./public/script/PR2_modules/utils.js').utils;
+var chatbox    = require('./public/script/PR2_modules/chatbox.js').chatbox;
+var download   = require('./public/script/PR2_modules/download.js').download;
+var fullscreen = require('./public/script/PR2_modules/fullscreen.js').fullscreen;
+var modals     = require('./public/script/PR2_modules/modals.js').modals;
+var peer       = require('./public/script/PR2_modules/peer.js').peer;
+var shapes     = require('./public/script/PR2_modules/shapes.js').shapes;
+var shortcuts  = require('./public/script/PR2_modules/shortcuts.js').shortcuts;
+var toolbar    = require('./public/script/PR2_modules/toolbar.js').toolbar;
+var upload     = require('./public/script/PR2_modules/upload.js').upload;
+var user       = require('./public/script/PR2_modules/user.js').user;
+var whiteboard = require('./public/script/PR2_modules/whiteboard.js').whiteboard;
+
+
 //app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
