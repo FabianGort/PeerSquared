@@ -1,9 +1,20 @@
 var http = require('http'),
      socket_io = require('socket.io'),
      fs = require('fs');
-    //PR2 = require('PR2');
+    
+    //var options = {};
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser')
+var path = require('path');
 
-var options = {};
+//app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(bodyParser.json());
+
+//app.use(express.static(path.join(__dirname, 'public')));
+
 
 var app = http.createServer(handler);
 var io = socket_io.listen(app);
