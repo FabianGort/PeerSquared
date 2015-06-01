@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8"> 
  <title>PeerSquared</title>
@@ -8,8 +8,12 @@
 <body>
 <script>
 var user = location.hash.slice(1).split('_');
+
+/*
 var credentials = {level : user[0], name : user[0], channel :user[1]};
 
+PR2.init(credentials);
+*/
 window.onbeforeunload = function() {
 	if(PR2.peer.isConnected()) {
 	  PR2.peer.sendData(JSON.stringify({type : 'close-connection'}));
@@ -18,8 +22,28 @@ window.onbeforeunload = function() {
 
 </script>
 <script src="http://js.pusher.com/2.0/pusher.min.js" type="text/javascript"></script>
-<script src="script/Pusher_Socket.js"></script> 
+<script src="script/Pusher_Socket.js"></script>
 <script src="script/peersquared.min.js"></script>
 
+<script src="script/PR2.js"></script> 
+
+<script src="script/setup.js"></script>
+
+<script src="config.js"></script>
+
+<script src="script/PR2_modules/camplayer.js"></script>
+<script src="script/PR2_modules/utils.js"></script>
+<!--<script src="script/PR2_modules/cambox.js"></script>-->
+<script src="script/PR2_modules/chatbox.js"></script>
+<script src="script/PR2_modules/download.js"></script>
+<script src="script/PR2_modules/fullscreen.js"></script>
+<script src="script/PR2_modules/modals.js"></script>
+<script src="script/PR2_modules/peer.js"></script>
+<script src="script/PR2_modules/shapes.js"></script>
+<script src="script/PR2_modules/shortcuts.js"></script>
+<script src="script/PR2_modules/toolbar.js"></script>
+<script src="script/PR2_modules/upload.js"></script>
+<script src="script/PR2_modules/user.js"></script>
+<script src="script/PR2_modules/whiteboard.js"></script>
 </body>
 </html>
