@@ -50,7 +50,7 @@ return self::$instance;
 
 class Pusher
 {
-public static $VERSION = '2.0.0';
+public static $VERSION = '2.2.0';
 
 private $settings = array ();
 private $logger = null;
