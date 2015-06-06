@@ -37,7 +37,7 @@ var Socket = (function() {
 		// Open a websocket connection and create channel event listeners	
 		open : function(room_name, user_name) {
 			console.log('connecting user ' + user_name + ' to ' + 'channel ' + room_name);
-			pusher_socket = new Pusher('ce5e15ae4b2ea6d71902');
+			pusher_socket = new Pusher('3cf3c7ca0b7957dece97');
 			Pusher.channel_auth_endpoint = 'auth.php?your_name=' + user_name ;
 			channel = pusher_socket.subscribe('presence-' + room_name);
 			create_listeners();
